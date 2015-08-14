@@ -3,7 +3,7 @@ TCHAR szCurrentPath[MAX_PATH] = {0};
 TCHAR szIniFileName[MAX_PATH] = {0};
 INT nVal = 0;
 
-GetCurrentDirectory(sizeof(szCurrentPath), szCurrentPath);
+GetCurrentDirectory(MAX_PATH, szCurrentPath);
 _tcscpy(szIniFileName, szCurrentPath);
 _tcscat(szIniFileName, _T("\\cfg.ini"));
 nVal = GetPrivateProfileInt(_T("setup"), _T("AutoInstall"), 0, szIniFileName);
